@@ -13,8 +13,7 @@ class CategoryController extends \BaseController {
 	public function index()
 	{
 		//
-        $category = Category::all();
-        var_dump($category);
+        return View::make('secure.categoriesList')->with('category', Category::all())->with('title', 'List of Categories');
 	}
 
 	/**
@@ -51,6 +50,9 @@ class CategoryController extends \BaseController {
 	public function show($id)
 	{
 		//
+
+        return View::make('secure.category')->with('category', Category::find($id))->withTitle('Category '.$id);
+
 	}
 
 	/**
@@ -62,6 +64,9 @@ class CategoryController extends \BaseController {
 	public function edit($id)
 	{
 		//
+       $data['category'] = Category::find($id);
+        return View::make('secure.categoryEdit', $data)->withTitle('Edit Category '.$id);
+
 	}
 
 	/**
@@ -73,6 +78,10 @@ class CategoryController extends \BaseController {
 	public function update($id)
 	{
 		//
+        $category = new Category();
+        return $category->update($id);
+
+
 	}
 
 	/**
@@ -84,6 +93,7 @@ class CategoryController extends \BaseController {
 	public function destroy($id)
 	{
 		//
+        return Category::destroy($id);
 	}
 
 }
