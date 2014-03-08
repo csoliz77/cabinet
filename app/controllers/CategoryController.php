@@ -36,9 +36,11 @@ class CategoryController extends \BaseController {
 	public function store()
 	{
 		//
-		$content = new Category;
+		$content = new Category();
 		$content->name = Input::get('name');
 		$content->save();
+        \Illuminate\Support\Facades\Session::flash('message', 'Successfully created category');
+        return Redirect::to('/categories');
 	}
 
 	/**
@@ -64,8 +66,8 @@ class CategoryController extends \BaseController {
 	public function edit($id)
 	{
 		//
-       $data['category'] = Category::find($id);
-        return View::make('secure.categoryEdit', $data)->withTitle('Edit Category '.$id);
+
+        return View::make('secure.categoryEdit')->with('category', Category::find($id))->withTitle('Edit Category '.$id);
 
 	}
 
@@ -78,8 +80,11 @@ class CategoryController extends \BaseController {
 	public function update($id)
 	{
 		//
-        $category = new Category();
-        return $category->update($id);
+        $category = Category::find($id);
+        $category->name = Input::get('name');
+        $category->save();
+
+        return Redirect::to('/categories');
 
 
 	}
@@ -93,7 +98,11 @@ class CategoryController extends \BaseController {
 	public function destroy($id)
 	{
 		//
-        return Category::destroy($id);
+        $category = Category::find($id);
+        $category->delete();
+        Session::flash('message', 'Successfully deleted category');
+
+        return Redirect::to('/categories');
 	}
 
 }

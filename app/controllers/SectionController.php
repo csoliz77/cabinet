@@ -10,6 +10,7 @@ class SectionController extends \BaseController {
 	public function index()
 	{
 		//
+        return View::make('secure.sectionsList')->with('sections', Section::all() )->withTitle('Curtis Varner Furniture &amp; Cabinetry');
 	}
 
 	/**
@@ -20,6 +21,7 @@ class SectionController extends \BaseController {
 	public function create()
 	{
 		//
+        return View::make('secure.sectionForm')->with('sections', Category::all())->withTitle('Add Section');
 	}
 
 	/**
@@ -30,6 +32,13 @@ class SectionController extends \BaseController {
 	public function store()
 	{
 		//
+        $section = new Section();
+        $section->content = Input::get('content');
+        $section->category = Input::get('category');
+        $section->save();
+        \Illuminate\Support\Facades\Session::flash('message', 'Successfully created category');
+
+        return Redirect::to('/sections');
 	}
 
 	/**
@@ -41,6 +50,7 @@ class SectionController extends \BaseController {
 	public function show($id)
 	{
 		//
+        return View::make('secure.section')->with('section', Section::find($id))->withTitle('Section '.$id);
 	}
 
 	/**
@@ -52,7 +62,9 @@ class SectionController extends \BaseController {
 	public function edit($id)
 	{
 		//
-	}
+        return View::make('secure.sectionEdit')->with('section', Section::find($id))->withTitle('Edit Paragraph '.$id);
+
+    }
 
 	/**
 	 * Update the specified resource in storage.
@@ -63,6 +75,11 @@ class SectionController extends \BaseController {
 	public function update($id)
 	{
 		//
+        $section = Section::find($id);
+        $section->content = Input::get('content');
+        $section->save();
+
+        return Redirect::to('/sections/'.$id);
 	}
 
 	/**
@@ -74,6 +91,11 @@ class SectionController extends \BaseController {
 	public function destroy($id)
 	{
 		//
+        $section = Section::find($id);
+        $section->delete();
+        Session::flash('message', 'Successfully deleted category');
+
+        return Redirect::to('/sections');
 	}
 
 }

@@ -10,6 +10,7 @@ class ImageController extends \BaseController {
 	public function index()
 	{
 		//
+        return View::make('secure.imagesList')->with('images', Image::all() )->withTitle('Curtis Varner Furniture &amp; Cabinetry');
 	}
 
 	/**
@@ -20,6 +21,8 @@ class ImageController extends \BaseController {
 	public function create()
 	{
 		//
+        return View::make('secure.imageForm')->with('sections', Category::all())->withTitle('Add Image');
+
 	}
 
 	/**
@@ -30,6 +33,14 @@ class ImageController extends \BaseController {
 	public function store()
 	{
 		//
+        $image = new Image();
+        $image->name = Input::get('name');
+        $image->caption = Inpute::get('caption');
+        $image->category = Input::get('category');
+        $image->save();
+        \Illuminate\Support\Facades\Session::flash('message', 'Successfully created category');
+
+        return Redirect::to('/sections');
 	}
 
 	/**
@@ -41,6 +52,7 @@ class ImageController extends \BaseController {
 	public function show($id)
 	{
 		//
+        return View::make('secure.image')->with('image', Image::find($id))->withTitle('Image '.$id);
 	}
 
 	/**
@@ -52,6 +64,7 @@ class ImageController extends \BaseController {
 	public function edit($id)
 	{
 		//
+        return View::make('secure.imageEdit')->with('image', Image::find($id))->withTitle('Edit Image '.$id)->with('sections', Section::find($id));
 	}
 
 	/**
@@ -63,6 +76,13 @@ class ImageController extends \BaseController {
 	public function update($id)
 	{
 		//
+        $image = Image::find($id);
+        $image->name = Input::get('name');
+        $image->caption = Input::get('caption');
+        $image->category = Input::get('category');
+        $image->save();
+
+        return Redirect::to('/sections/'.$id);
 	}
 
 	/**
@@ -74,6 +94,8 @@ class ImageController extends \BaseController {
 	public function destroy($id)
 	{
 		//
+        $image = Image::find($id);
+        $image->delete();
 	}
 
 }
