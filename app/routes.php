@@ -10,6 +10,9 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
+Route::get('/', function(){
+    return View::make('home')->withTitle('Curtis Varner Cabinetry &amp; Furniture');
+});
 
 Route::get('/about','AboutController@index');
 

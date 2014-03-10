@@ -1,18 +1,28 @@
 @extends('templates.master')
 
 @section('content')
-<ul>
-
-    <li>ID: {{ $image->id }}</li>
-    <li>Section: {{ $image->category }}</li>
-    <li>Caption: {{ $image->caption }}</li>
-    <li>Name: {{ $image->name }}</li>
-    <li>Image: <img src="/assets/imgs/{{ $image->filename}}"/> </li>
 
 
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Section</th>
+        <th>Caption</th>
+        <th>Name</th>
+        <th>Image</th>
+
+    </tr>
+
+    <tr>
+        <td>{{ $image->id }}</td>
+        <td>{{ $image->category }}</td>
+        <td>{{ $image->caption }}</td>
+        <td>{{ $image->name }}</td>
+        <td><img src="/assets/imgs/{{ $image->thumbs }}" /> </td>
+    </tr>
 
 
-</ul>
+</table>
 
 
 @stop

@@ -2,15 +2,17 @@
 
 @section('content')
 
+<div class="form-container">
+{{ Form::model($section, array('route'=> array('sections.update', $section->id, 'class'=>'form') , 'method'=>'PUT')) }}
 
-{{ Form::model($section, array('route'=> array('sections.update', $section->id) , 'method'=>'PUT')) }}
-
+<div class="form-group">
 {{ Form::hidden('id', $section->id) }}
-{{ Form::textarea('content', $section->content) }}
-<br />
+{{ Form::label('content', 'Edit Content') }}
+{{ Form::textarea('content', $section->content, array('class'=>'form-control', 'rows'=>'6', 'cols'=>'100')) }}
+</div>
 
-{{ Form::submit('Submit') }}
+{{ Form::submit('Submit', array('class'=>'btn btn-default') )}}
 
 {{ Form::close() }}
-
+</div>
 @stop

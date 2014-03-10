@@ -1,14 +1,12 @@
 @extends('templates.master')
 @section('content')
 
-
-{{ Form::open(array('action'=>'ImageController@store', 'image'=> true, 'enctype' => 'multipart/form-data')) }}
-
+<div class="form-container">
+{{ Form::open(array('action'=>'ImageController@store', 'class'=>'form', 'role'=>'form', 'image'=> true, 'enctype' => 'multipart/form-data')) }}
+<fieldset>
 <div class="form-group">
-{{ Form::label('image', 'Image Upload') }}
-</div>
+{{ Form::label('image', 'Upload Image') }}
 
-<div class="form-group">
 {{ Form::file('image') }}
 </div>
 
@@ -19,7 +17,7 @@
 
 <div class="form-group">
     {{ Form::label ('caption', 'Caption: ') }}
-    {{ Form::textarea('caption', null, array('cols'=> '100', 'rows'=>'5')); }}
+    {{ Form::textarea('caption', null, array('class'=> 'form-control','rows'=>'2')); }}
 
 </div>
 
@@ -33,11 +31,10 @@
     </select>
 </div>
 
-<button type="submit" class="btn btn-default">
-    Submit
+<button type="submit" class="btn btn-default">Submit</button>
 
-</button>
+</fieldset>
 {{ Form::close() }}
-
+</div>
 
 @stop

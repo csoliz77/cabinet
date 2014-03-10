@@ -3,14 +3,25 @@
 @section('content')
 
 
-{{ Form::model($category, array('route'=> array('categories.update', $category->id) , 'method'=>'PUT')) }}
-
+<div class="form-container">{{ Form::model( $category, array('route'=> array('categories.update', $category->id) , 'method'=>'PUT'), array('class'=>'form-inline') )}}
+<fieldset>
 {{ Form::hidden('id', $category->id) }}
-{{ Form::textarea('name', $category->name) }}
+
+
+<div class="form-group">
+    <div class="form-control">
+{{ Form::label('name', 'Category Name: ') }}
+
+{{ Form::text('name', $category->name) }}
+
+</div>
+
 <br />
+{{ Form::submit('Change', array('class'=>'btn')) }}
 
-{{ Form::submit('Submit') }}
 
+
+</fieldset>
 {{ Form::close() }}
-
+</div>
 @stop

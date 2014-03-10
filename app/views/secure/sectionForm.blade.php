@@ -1,27 +1,27 @@
 @extends('templates.master')
 @section('content')
 
+<div class="form-container">
 
-{{ Form::open(array('action'=>'SectionController@store')) }}
+{{ Form::open(array('action'=>'SectionController@store', 'role'=>'form', 'class'=>'form')) }}
 <div class="form-group">
-    {{ Form::label ('content', 'Content ') }}
-    {{ Form::textarea('content', 'Paragraph') }}
-    {{ Form::label ('category', 'Choose a category') }}
+    {{ Form::label ('content', 'Add Content ') }}
+    {{ Form::textarea('content', 'Paragraph', array('class'=>'form-control', 'rows'=>'3')) }}
 
+ </div>
+    <div class="form-control">
+    {{ Form::label ('category', 'Choose a category') }}
     <select name="category">
      @foreach($sections as $s)
         <option value="{{ $s->name}}"> {{ $s->name }} </option>
      @endforeach
     </select>
 
-
-
 </div>
-<button type="submit" class="btn btn-default">
-    Submit
+<br />
+<button type="submit" class="btn btn-default">Submit</button>
 
-</button>
 {{ Form::close() }}
 
-
+</div>
 @stop
