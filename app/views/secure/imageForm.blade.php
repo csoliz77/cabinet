@@ -2,14 +2,24 @@
 @section('content')
 
 
-{{ Form::open(array('action'=>'ImageController@store')) }}
+{{ Form::open(array('action'=>'ImageController@store', 'image'=> true, 'enctype' => 'multipart/form-data')) }}
+
+<div class="form-group">
+{{ Form::label('image', 'Image Upload') }}
+</div>
+
+<div class="form-group">
+{{ Form::file('image') }}
+</div>
+
 <div class="form-group">
     {{ Form::label ('name', 'Image Name ') }}
-    {{ Form::text('content', null); }}
+    {{ Form::text('name', null); }}
 </div>
+
 <div class="form-group">
     {{ Form::label ('caption', 'Caption: ') }}
-    {{ Form::text('caption', null); }}
+    {{ Form::textarea('caption', null, array('cols'=> '100', 'rows'=>'5')); }}
 
 </div>
 

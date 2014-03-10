@@ -5,7 +5,7 @@
 {{ Form::open(array('action'=>'CategoryController@store')) }}
     <div class="form-group">
 {{ Form::label ('name', 'Category Name ') }}
-{{ Form::text('content', null); }}
+{{ Form::text('name', 'name'); }}
     </div>
     <button type="submit" class="btn btn-default">
 Submit

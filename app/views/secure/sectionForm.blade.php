@@ -24,8 +24,4 @@
 {{ Form::close() }}
 
 
-@foreach($sections as $s)
-{{ $s->name, ucfirst($s->name) }}
-@endforeach
-
 @stop

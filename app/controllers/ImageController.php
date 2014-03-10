@@ -33,14 +33,20 @@ class ImageController extends \BaseController {
 	public function store()
 	{
 		//
+	$name = Input::file('image')->getClientOriginalName();
         $image = new Image();
         $image->name = Input::get('name');
-        $image->caption = Inpute::get('caption');
+        $image->caption = Input::get('caption');
+        $image->filename = 'l_'.$name;
+        $image->thumbs = 't_'.$name;
         $image->category = Input::get('category');
         $image->save();
-        \Illuminate\Support\Facades\Session::flash('message', 'Successfully created category');
+        \Illuminate\Support\Facades\Session::flash('message', 'Successfully created image');
 
-        return Redirect::to('/sections');
+        Imagine::make(Input::file('image')->getRealPath())->resize(800, 600, true)->save('assets/imgs/'.'l_'.$name);
+        Imagine::make('assets/imgs/l_'.$name)->resize(200, 200, true)->save('assets/imgs/'.'t_'.$name);
+
+        return Redirect::to('/images');
 	}
 
 	/**
@@ -64,7 +70,7 @@ class ImageController extends \BaseController {
 	public function edit($id)
 	{
 		//
-        return View::make('secure.imageEdit')->with('image', Image::find($id))->withTitle('Edit Image '.$id)->with('sections', Section::find($id));
+        return View::make('secure.imageEdit')->with('image', Image::find($id))->withTitle('Edit Image '.$id)->with('sections', Category::find($id));
 	}
 
 	/**
@@ -82,7 +88,7 @@ class ImageController extends \BaseController {
         $image->category = Input::get('category');
         $image->save();
 
-        return Redirect::to('/sections/'.$id);
+        return Redirect::to('/images/'.$id);
 	}
 
 	/**
