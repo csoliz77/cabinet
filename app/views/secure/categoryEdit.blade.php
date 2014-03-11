@@ -3,21 +3,32 @@
 @section('content')
 
 
-<div class="form-container">{{ Form::model( $category, array('route'=> array('categories.update', $category->id) , 'method'=>'PUT'), array('class'=>'form-inline') )}}
+<div class="form-container">
+ {{ Form::model( $category, array('route'=> array('categories.update', $category->id) , 'method'=>'PUT') )}}
+
 <fieldset>
+
+
 {{ Form::hidden('id', $category->id) }}
 
 
-<div class="form-group">
-    <div class="form-control">
-{{ Form::label('name', 'Category Name: ') }}
 
-{{ Form::text('name', $category->name) }}
+<div class="form-group">
+{{ Form::label('name', 'Category Name: ', array('class'=>'form-control') )}}
+
+{{ Form::text('name', $category->name, array('class'=>'form-control')) }}
+
+</div>
+
+
+<div class="form-group">
+    {{ Form::label('navbar', 'Menu Name: ', array('class'=>'form-control')) }}
+    {{ Form::text('navbar', $category->navbar, array('class'=>'form-control')) }}
 
 </div>
 
 <br />
-{{ Form::submit('Change', array('class'=>'btn')) }}
+{{ Form::submit('Change', array('class'=>'btn btn-default')) }}
 
 
 

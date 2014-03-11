@@ -10,6 +10,7 @@
     <a href="http://cb2.local/">{{ HTML::image('/assets/imgs/masthead.jpg') }} </a>
 </div>
 
+@include('partials.navigation')
 
 <div class="content">
 

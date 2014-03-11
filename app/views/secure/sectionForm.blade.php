@@ -6,7 +6,7 @@
 {{ Form::open(array('action'=>'SectionController@store', 'role'=>'form', 'class'=>'form')) }}
 <div class="form-group">
     {{ Form::label ('content', 'Add Content ') }}
-    {{ Form::textarea('content', 'Paragraph', array('class'=>'form-control', 'rows'=>'3')) }}
+    {{ Form::textarea('content', 'Enter text here', array('class'=>'form-control', 'rows'=>'3')) }}
 
  </div>
     <div class="form-control">

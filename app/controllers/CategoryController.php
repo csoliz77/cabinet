@@ -38,6 +38,7 @@ class CategoryController extends \BaseController {
 		//
 		$content = new Category();
 		$content->name = Input::get('name');
+        $content->navbar = Input::get('navbar');
 		$content->save();
         \Illuminate\Support\Facades\Session::flash('message', 'Successfully created category');
         return Redirect::to('/categories');
@@ -82,6 +83,7 @@ class CategoryController extends \BaseController {
 		//
         $category = Category::find($id);
         $category->name = Input::get('name');
+        $category->navbar = Input::get('navbar');
         $category->save();
 
         return Redirect::to('/categories');
