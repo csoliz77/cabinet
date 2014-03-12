@@ -1,7 +1,8 @@
 @extends('templates.master')
 
 @section('content')
-<table class="table table-responsive">
+<table class="table table-hover">
+    <caption><h3>Edit Image</h3></caption>
     <tr>
         <th>Image</th>
     </tr>
@@ -11,7 +12,7 @@
 </table>
 
 
-{{ Form::model($image, array('route'=> array('images.update', $image->id) , 'method'=>'PUT')) }}
+{{ Form::model($image, array('route'=> array('images.update', $image->id) , 'method'=>'PUT', 'name'=>'form', 'role'=>'form')) }}
 
 {{ Form::hidden('id', $image->id) }}
 
@@ -22,10 +23,14 @@
 </div>
 <div class="form-group">
 {{ Form::label ('caption', 'Caption ') }}
-{{ Form::textarea('caption', $image->caption, array('class'=>'form-control', 'rows'=>'2')) }}
+{{ Form::textarea('caption', $image->caption, array('class'=>'ckeditor', 'rows'=>'2', 'id'=>'editor1')) }}
 </div>
 {{ Form::submit('Submit') }}
 
 {{ Form::close() }}
+
+ <script>
+ CKEDITOR.replace('editor1');
+ </script>
 
 @stop

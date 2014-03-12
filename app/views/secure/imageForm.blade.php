@@ -17,7 +17,7 @@
 
 <div class="form-group">
     {{ Form::label ('caption', 'Caption: ') }}
-    {{ Form::textarea('caption', null, array('class'=> 'form-control','rows'=>'2')); }}
+    {{ Form::textarea('caption', null, array('class'=> 'ckeditor','rows'=>'2', 'id'=>'editor1')); }}
 
 </div>
 
@@ -36,5 +36,8 @@
 </fieldset>
 {{ Form::close() }}
 </div>
+ <script>
+ CKEDITOR.replace('editor1');
+ </script>
 
 @stop

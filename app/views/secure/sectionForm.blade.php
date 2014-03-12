@@ -6,9 +6,14 @@
 {{ Form::open(array('action'=>'SectionController@store', 'role'=>'form', 'class'=>'form')) }}
 <div class="form-group">
     {{ Form::label ('content', 'Add Content ') }}
-    {{ Form::textarea('content', 'Enter text here', array('class'=>'form-control', 'rows'=>'3')) }}
+    {{ Form::textarea('content', 'Enter text here', array('class'=>'ckeditor', 'rows'=>'3',
+    'id'=>'editor1', 'rows'=>'10', 'cols'=>'80')) }}
 
  </div>
+ <script>
+ CKEDITOR.replace('editor1');
+ </script>
+
     <div class="form-control">
     {{ Form::label ('category', 'Choose a category') }}
     <select name="category">

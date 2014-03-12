@@ -15,6 +15,9 @@ Route::get('/', function(){
 });
 
 Route::get('/about','AboutController@index');
+Route::any('/sections', array('as'=>'user/login', 'uses'=>'UserController@loginAction'));
+
+Route::controller('users'=>'UserController');
 
 Route::resource('categories', 'CategoryController');
 Route::resource('sections', 'SectionController');
