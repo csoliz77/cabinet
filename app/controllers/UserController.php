@@ -85,7 +85,7 @@ class UserController extends \BaseController {
 					             'password'=>Input::get('password'));
 		    if(Auth::attempt($credentials))
 		    {
-		    	return Redirect::route('categories.create');
+		    	return Redirect::intended('categories.create');
 		    }
 		}
             $data['errors'] = new MessageBag(array('password'=> array('Username and/or password invalid')));

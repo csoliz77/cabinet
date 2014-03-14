@@ -14,11 +14,15 @@ Route::get('/', function(){
     return View::make('home')->withTitle('Curtis Varner Cabinetry &amp; Furniture');
 });
 
-Route::get('/about','AboutController@index');
-Route::any('/sections', array('as'=>'user/login', 'uses'=>'UserController@loginAction'));
 
-Route::controller('users'=>'UserController');
+Route::get('user/login', array('uses'=>'AuthController@getLogin'));
+Route::post('user/login', array('uses'=>'AuthController@postLogin'));
+Route::get('user/logout', array('uses'=>'AuthController@getLogout'));
+Route::group( array('before' => 'auth'), function()
+{
 
 Route::resource('categories', 'CategoryController');
 Route::resource('sections', 'SectionController');
 Route::resource('images', 'ImageController');
+
+});
