@@ -3,6 +3,6 @@
 @section('content')
 
 @foreach($section as $s)
-<p>{{ $s->id }}</p>
+<p>{{ $s->content }}</p>
 @endforeach
 @stop
