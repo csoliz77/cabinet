@@ -21,7 +21,7 @@ class AuthController extends BaseController {
 	   if(Auth::attempt($credentials))
 	    {
 	    	//We can redirecto to a dashboard here.
-	    	return Redirect::intended('/sections');
+	    	return Redirect::to('dashboard');
 	    }
 	}
 

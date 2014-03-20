@@ -14,6 +14,7 @@ Route::get('/', function(){
     return View::make('home')->withTitle('Curtis Varner Cabinetry &amp; Furniture');
 });
 
+Route::get('/about', 'AboutController@index');
 
 Route::get('user/login', array('uses'=>'AuthController@getLogin'));
 Route::post('user/login', array('uses'=>'AuthController@postLogin'));
@@ -24,5 +25,9 @@ Route::group( array('before' => 'auth'), function()
 Route::resource('categories', 'CategoryController');
 Route::resource('sections', 'SectionController');
 Route::resource('images', 'ImageController');
+
+Route::get('/dashboard', function(){
+return View::make('secure.dashboard')->withTitle('Dashboard');
+});
 
 });

@@ -5,7 +5,9 @@ class AboutController extends Controller {
 
     public function index(){
 
-	return View::make('about')->with('title', 'Curtis Varner Furniture &amp; Cabinetry');
+
+	return View::make('about')->withTitle('About Curtis')->with('section', Section::where('category', '=', 'about-curtis'));
+
     }
 
 }
