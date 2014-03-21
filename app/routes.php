@@ -16,6 +16,10 @@ Route::get('/', function(){
 
 Route::get('/about', 'AboutController@index');
 Route::get('/furniture', 'FurnitureController@index');
+Route::get('/kitchen', 'KitchenController@index');
+Route::get('/cabinetry', 'CabinetryController@index');
+Route::get('/projects', 'ProjectController@index');
+Route::get('/contact', 'ContactController@index');
 
 
 Route::get('user/login', array('uses'=>'AuthController@getLogin'));
