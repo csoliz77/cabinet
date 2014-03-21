@@ -15,6 +15,8 @@ Route::get('/', function(){
 });
 
 Route::get('/about', 'AboutController@index');
+Route::get('/furniture', 'FurnitureController@index');
+
 
 Route::get('user/login', array('uses'=>'AuthController@getLogin'));
 Route::post('user/login', array('uses'=>'AuthController@postLogin'));
