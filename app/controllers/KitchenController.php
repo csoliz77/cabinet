@@ -9,7 +9,9 @@
 class KitchenController extends Controller {
 
     public function index(){
-        return View::make('kitchen')->withTitle('Kitchen &amp; Bath')->with('section', Section::where('category','=','kitchen-bath')->get());
+        return View::make('kitchen')->withTitle('Kitchen &amp; Bath')
+            ->with('section', Section::where('category','=','kitchen-bath')->get())
+            ->with('images', Image::where('category', '=', 'kitchen-bath')->get());
     }
 
 } 

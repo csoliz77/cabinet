@@ -9,7 +9,9 @@
 class ContactController extends Controller{
 
     public function index(){
-        return View::make('contact')->withTitle('Contact')->with('section', Section::where('category','=','contact')->get());
+        return View::make('contact')->withTitle('Contact')
+            ->with('section', Section::where('category','=','contact')->get())
+            ->with('images', Image::where('category', '=', 'contact')->get());
     }
 
 } 

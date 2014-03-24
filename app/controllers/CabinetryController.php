@@ -10,7 +10,9 @@ class CabinetryController extends Controller {
 
     public function index(){
 
-        return View::make('cabinetry')->withTitle('Cabinetry')->with('section', Section::where('category','=','cabinetry')->get());
+        return View::make('cabinetry')->withTitle('Cabinetry')
+            ->with('section', Section::where('category','=','cabinetry')->get())
+            ->with('images', Image::where('category', '=', 'cabinetry')->get());
 
     }
 
