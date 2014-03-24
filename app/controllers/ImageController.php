@@ -43,6 +43,7 @@ class ImageController extends \BaseController {
         $image->save();
         \Illuminate\Support\Facades\Session::flash('message', 'Successfully created image');
 
+
         Imagine::make(Input::file('image')->getRealPath())->resize(800, 600, true)->save('assets/imgs/'.'l_'.$name);
         Imagine::make('assets/imgs/l_'.$name)->resize(200, 200, true)->save('assets/imgs/'.'t_'.$name);
 
