@@ -18,6 +18,7 @@
 $(document).ready(function() {
     $('.bxslider').bxSlider({
 	mode: 'fade',
+    auto: true,
 	infiniteLoop: false,
 	autoControls: true,
 	hideControlOnEnd: true
