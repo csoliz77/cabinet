@@ -8,7 +8,7 @@ class AboutController extends Controller {
 
 	return View::make('about')->withTitle('About Curtis')
         ->with('section', Section::where('category', '=','about-curtis')->get())
-        ->with('images', Image::where('category', '=', 'about-curtis')->get());
+        ->with('images', Image::find('slideshow'));
 
     }
 

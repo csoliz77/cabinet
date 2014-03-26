@@ -33,21 +33,27 @@ class ImageController extends \BaseController {
 	public function store()
 	{
 		//
-	$name = Input::file('image')->getClientOriginalName();
+        $name = Input::file('image')->getClientOriginalName();
         $image = new Image();
         $image->name = Input::get('name');
         $image->caption = Input::get('caption');
         $image->filename = 'l_'.$name;
         $image->thumbs = 't_'.$name;
         $image->category = Input::get('category');
-        $image->save();
-        \Illuminate\Support\Facades\Session::flash('message', 'Successfully created image');
 
+        $image->slideshow = $name;
+        $image->save();
+
+        if(Input::get('slideshow'))
+            Imagine::make(Input::file('image')->getRealPath())->resize(600, 400, true)->save('assets/imgs/slideshow/'.$name);
 
         Imagine::make(Input::file('image')->getRealPath())->resize(800, 600, true)->save('assets/imgs/'.'l_'.$name);
         Imagine::make('assets/imgs/l_'.$name)->resize(200, 200, true)->save('assets/imgs/'.'t_'.$name);
 
-        return Redirect::to('/images');
+        return Redirect::to('/images/create');
+
+
+
 	}
 
 	/**

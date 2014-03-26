@@ -21,6 +21,15 @@
 
 </div>
 
+<div class="control-group">
+<div class="controls">
+{{ Form::label('slideshow', 'Slideshow', array('class'=>'control-label')) }}
+
+{{ Form::checkbox('slideshow', 'value', false) }}
+</div>
+</div>
+
+
 <div class="form-group">
     {{ Form::label ('category', 'Choose a category') }}
 

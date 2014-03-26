@@ -10,9 +10,11 @@
 
 <ul class="bxslider">
 @foreach($images as $i)
-<li><img src="/assets/imgs/{{ $i->filename }}" ></li>
+<li><img src="/assets/imgs/slideshow/{{ $i->slideshow }}" ></li>
 @endforeach
 </ul>
+
+{{ var_dump($images) }}
 
 <script>
 $(document).ready(function() {
