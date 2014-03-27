@@ -47,6 +47,7 @@ class ImageController extends \BaseController {
         if(Input::get('slideshow'))
             Imagine::make(Input::file('image')->getRealPath())->resize(600, 400, true)->save('assets/imgs/slideshow/'.$name);
 
+
         Imagine::make(Input::file('image')->getRealPath())->resize(800, 600, true)->save('assets/imgs/'.'l_'.$name);
         Imagine::make('assets/imgs/l_'.$name)->resize(200, 200, true)->save('assets/imgs/'.'t_'.$name);
 
