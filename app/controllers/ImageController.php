@@ -110,6 +110,9 @@ class ImageController extends \BaseController {
 		//
         $image = Image::find($id);
         $image->delete();
+
 	}
+
+
 
 }

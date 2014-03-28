@@ -11,7 +11,7 @@ class FurnitureController extends Controller {
     public function index(){
         return View::make('furniture')->withTitle('Furniture')
             ->with('section', Section::where('category','=','furniture')->get())
-            ->with('images', Image::where('category', '=', 'furniture')->get());
+            ->with('images', Image::where('category', '=', 'furniture')->orderBy('order', 'ASC')->get());
     }
 }
 

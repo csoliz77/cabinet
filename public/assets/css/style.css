@@ -62,7 +62,7 @@ footer a {
     width:100%;
     text-align:justify;
 }
-.boxes_categories {
+.boxes {
     border: 1px solid #ccc;
     width: 220px;
     height:220px;
@@ -70,7 +70,7 @@ footer a {
     margin: 5px;
 }
 
-#categories {
+.categories {
     width: 700px;
     margin:0 auto;
 }

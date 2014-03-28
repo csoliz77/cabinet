@@ -8,8 +8,9 @@
 {{ HTML::style('assets/css/jquery.bxslider.css') }}
 
 
-{{ HTML::script('assets/js/jquery-ui-1.10.4.custom.js') }}
+
 {{ HTML::script('assets/js/jquery-2.1.0.js') }}
+{{ HTML::script('assets/js/jquery-ui-1.10.4.custom.js') }}
 {{ HTML::script('assets/js/jquery.ui.core.js')}}
 {{ HTML::script('assets/js/jquery.ui.mouse.js')}}
 {{ HTML::script('assets/js/jquery.ui.widget.js')}}
