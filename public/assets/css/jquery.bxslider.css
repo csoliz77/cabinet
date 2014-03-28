@@ -18,12 +18,14 @@
 	position: relative;
 	margin: 0 auto 60px;
 	padding: 0;
+        padding-top: 20px;
 	*zoom: 1;
 }
 
 .bx-wrapper img {
 	max-width: 100%;
 	display: block;
+        
 }
 
 /** THEME
@@ -32,7 +34,7 @@
 .bx-wrapper .bx-viewport {
 	-moz-box-shadow: 0 0 5px #ccc;
 	-webkit-box-shadow: 0 0 5px #ccc;
-	box-shadow: 0 0 5px #ccc;
+	box-shadow: 0 0 5px #fff;
 	border: solid #fff 5px;
 	left: -5px;
 	background: #fff;

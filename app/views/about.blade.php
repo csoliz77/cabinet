@@ -3,7 +3,7 @@
 @section('content')
 
 @foreach($section as $s)
-<p>{{ $s->content }}</p>
+{{ $s->content }}
 @endforeach
 
 <hr>
@@ -15,19 +15,26 @@
  </ul>  
 
 
-
-
 <script>
 $(document).ready(function() {
     $('.bxslider').bxSlider({
 	mode: 'fade',
-    auto: true,
-	infiniteLoop: false,
-	autoControls: true,
-	hideControlOnEnd: true
+        auto: true,
+	infiniteLoop: true,
+	
+	
    });
     });
 
 </script>
 
+<script>
+
+$( "p" ).addClass( "content" );    
+</script>
+
+<script>
+   
+    $("p:eq(0)").append($('.bxslider'));
+</script>
 @stop

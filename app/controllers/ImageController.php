@@ -44,8 +44,9 @@ class ImageController extends \BaseController {
         $image->slideshow = $name;
         $image->save();
 
-        if(Input::get('slideshow'))
-            Imagine::make(Input::file('image')->getRealPath())->resize(600, 400, true)->save('assets/imgs/slideshow/'.$name);
+        if (Input::get('slideshow')) {
+            Imagine::make(Input::file('image')->getRealPath())->resize(600, 400, true)->save('assets/imgs/slideshow/' . $name);
+        }
 
 
         Imagine::make(Input::file('image')->getRealPath())->resize(800, 600, true)->save('assets/imgs/'.'l_'.$name);
@@ -107,7 +108,7 @@ class ImageController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+
         $image = Image::find($id);
         $image->delete();
 

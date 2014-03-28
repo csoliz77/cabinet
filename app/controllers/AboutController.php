@@ -10,7 +10,7 @@ class AboutController extends Controller {
         ->with('section', Section::where('category', '=','about-curtis')->get())
         ->with('images', DB::table('images')
         		->where('slideshow', '!=', '')
-        		->distinct()->get());
+        		->distinct()->orderBy('order', 'ASC')->get());
 
     }
 

@@ -5,4 +5,8 @@
 @foreach($section as $s)
 {{ $s->content }}
 @endforeach
+
+
 @stop
+
+
