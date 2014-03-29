@@ -1,6 +1,7 @@
 <?php
-	mysql_connect(localhost,'demo','demo');
-	mysql_select_db('cabinets') or die( "Unable to select database");
+
+    include_once('../app/config/ajaxconn.php');
+
 
 	parse_str($_POST['pages'], $pageOrder);
 	foreach ($pageOrder['page'] as $key => $value) {

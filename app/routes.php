@@ -21,6 +21,8 @@ Route::get('/cabinetry', 'CabinetryController@index');
 Route::get('/projects', 'ProjectController@index');
 Route::get('/contact', 'ContactController@index');
 
+Route::post('/images', 'Post@postore');
+
 
 Route::get('user/login', array('uses'=>'AuthController@getLogin'));
 Route::post('user/login', array('uses'=>'AuthController@postLogin'));
