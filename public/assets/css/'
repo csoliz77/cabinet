@@ -120,11 +120,17 @@ footer a {
 .bxsliderwrap {
 }
 
-.breakline {
+.pagination {
     clear:both;
-    width: 100%;
-    display:block;
-    float: right;
+    margin-left: auto;
+    margin-right: auto;
+    padding:0;
+    text-align:center;
 }
+.pagination ul {
+    display:inline-block;
+    //display: inline-block;
 
-
+}
+.pagination li {
+    }
