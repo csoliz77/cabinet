@@ -12,7 +12,7 @@ class CabinetryController extends Controller {
 
         return View::make('cabinetry')->withTitle('Cabinetry')
             ->with('section', Section::where('category','=','cabinetry')->get())
-            ->with('images', Image::where('category', '=', 'cabinetry')->get());
+            ->with('images', Image::where('category', '=', 'cabinetry')->paginate(9));
 
     }
 

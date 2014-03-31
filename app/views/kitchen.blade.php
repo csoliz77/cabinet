@@ -11,7 +11,12 @@
     @foreach($images as $i)
     <div class="boxes" id="page_{{$i->id}}"><a href="assets/imgs/{{$i->filename }}" rel="lightbox-kitchen" title="{{$i->caption }}"> <img src="assets/imgs/{{$i->thumbs }}"></a></div>
     @endforeach
+</div>
 
+<div id="example"></div>
+<div class="pagination-div">
+{{ $images->links() }}
+</div>
 
     <script>
         $(function(){

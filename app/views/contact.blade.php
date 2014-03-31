@@ -9,9 +9,10 @@
 
 
 <script>
-
-    $( "ul" )eq(1).addClass( "contact" );
-    $("li").addClass("contact");
+$(document).ready(function(){
+    $( "ul:last" ).addClass( "contact" );
+    $("ul").addClass("contact");
+});
 </script>
 @stop
 

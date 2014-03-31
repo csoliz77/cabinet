@@ -9,6 +9,7 @@
 {{ HTML::style('assets/css/ui-lightness/jquery-ui-1.10.4.custom.css') }}
 {{ HTML::style('assets/css/jquery.bxslider.css') }}
 {{ HTML::style('assets/css/slimbox2.css') }}
+{{ HTML::style('assets/css/bootstrap-responsive.css') }}
 
 
 
