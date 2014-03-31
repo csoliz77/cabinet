@@ -60,7 +60,6 @@ footer a {
 .content {
     clear:both;
     width:100%;
-    text-align:justify;
 }
 .boxes {
     border: 1px solid #ccc;
@@ -112,4 +111,11 @@ footer a {
     width: 600px;
     margin:0, auto;
     padding:10px;
+}
+
+.intro {
+    text-align: justify;
+}
+
+.bxsliderwrap {
 }

@@ -10,7 +10,7 @@
 
 <div class="categories" id="sortable">
 @foreach($images as $i)
-<div class="boxes" id="page_{{$i->id}}"> <img src="assets/imgs/{{ $i->thumbs }}"></div>
+<div class="boxes" id="page_{{$i->id}}"><a href="assets/imgs/{{ $i->filename }}" rel="lightbox-furniture" title="{{$i->caption}}"> <img src="assets/imgs/{{ $i->thumbs }}"></a></div>
 @endforeach
 </div>
 
