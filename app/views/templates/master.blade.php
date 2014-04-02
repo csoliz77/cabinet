@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <title>{{ $title }}</title>
-@include('partials.head')
+    @include('partials.head')
 </head>
 <body>
 <div class="wrapper">

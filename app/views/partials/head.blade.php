@@ -7,12 +7,17 @@
 {{ HTML::style('assets/css/bootstrap-theme.css') }}
 {{ HTML::style('assets/ckeditor/contents.css') }}
 {{ HTML::style('assets/css/ui-lightness/jquery-ui-1.10.4.custom.css') }}
+<!--bxslider -->
+
 {{ HTML::style('assets/css/jquery.bxslider.css') }}
+
+<!--end of bxslider -->
+
 {{ HTML::style('assets/css/slimbox2.css') }}
 {{ HTML::style('assets/css/bootstrap-responsive.css') }}
 
 
-
+<!--scripts -->
 
 {{ HTML::script('assets/js/jquery-2.1.0.js') }}
 {{ HTML::script('assets/js/jquery-ui-1.10.4.custom.js') }}
