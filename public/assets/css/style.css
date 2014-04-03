@@ -18,8 +18,13 @@ footer {
     width:100%;
 }
 
+
 footer a {
     color:#000000;
+    }
+footer a:hover {
+    color:brown;
+    text-decoration:none;
     }
 
 .boxwrap {
@@ -50,6 +55,15 @@ footer a {
     padding-bottom:20px;
     float:right;
 }
+
+.navbarstyle a:hover {
+    text-decoration: none;
+    color:brown;
+}
+.navbarstyle a:active {
+    color:brown;
+}
+
 
 .address {
     width:100%;
@@ -107,7 +121,7 @@ footer a {
 }
 .contact li {
     list-style-type:none;
-    
+
 }
 
 .form-container {

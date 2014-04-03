@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
 <title>{{ $title }}</title>
-    @include('partials.head')
+
+    @section('head')
+	{{ HTML::style('assets/css/style.css') }}
+	{{ HTML::style('assets/css/bootstrap.css') }}
+    @show
 </head>
 <body>
 <div class="wrapper">
